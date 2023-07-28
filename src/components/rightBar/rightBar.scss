@@ -1,0 +1,89 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow: scroll;
+    background-color: themed("bgsoft");
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 10px;
+
+      .item {
+        -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+        padding: 5px 15px;
+        margin-bottom: 20px;
+        background-color: themed("bg");
+
+        span {
+          color: themed("itemtitle");
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 20px 0px;
+
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              top: 0;
+              left: 30px;
+            }
+            p {
+                color: themed("regulartext");
+            }
+            span {
+              font-weight: 500;
+              color: themed("regulartext");
+            }
+        }
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              border: none;
+              padding: 5px;
+              color: themed("buttontext");
+              cursor: pointer;
+
+              &:first-child {
+                background-color: #1f4068;
+              }
+              &:last-child {
+                background-color: #e33e5a;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
